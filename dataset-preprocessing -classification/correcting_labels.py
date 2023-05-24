@@ -9,7 +9,7 @@ import os
 
 def correcting_labels_main(config, logger):
     csv_pth = config['PATH']['drive']['csv_2_path']
-    new_img_pth = config["PATH"]['pwd']['new_img_path']
+    new_img_pth = config["PATH"]['drive']['new_img_pth']
     pwd_root_pth = config['PATH']['pwd']['root_path']
     combined_img_path = config["PATH"]['pwd']['combined_img_path']
 
