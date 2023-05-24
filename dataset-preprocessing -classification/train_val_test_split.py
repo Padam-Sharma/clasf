@@ -11,6 +11,7 @@ import os
 
 def train_val_test_split_main(config, logger):
     combined_img_path = config["PATH"]['pwd']['combined_img_path']
+    pwd_root_pth = config['PATH']['pwd']['root_path']
 
     pth = glob(combined_img_path + '/*/*')
 
@@ -43,8 +44,18 @@ def train_val_test_split_main(config, logger):
     val_pth = pth[train_len:train_len + val_len]
     test_pth = pth[train_len + val_len:]
 
-    len(train_pth) + len(val_pth) + len(test_pth)
-
     movettv(train_pth, 'train')
     movettv(val_pth, 'val')
     movettv(test_pth, 'test')
+
+    print('No. of images after train split classwise \n')
+    for i in glob(pwd_root_pth+'/train/*'):
+        print(i.split('/')[-1], len(glob(i + '/*')))
+
+    print('No. of images after val split classwise \n')
+    for i in glob(pwd_root_pth+'/val/*'):
+        print(i.split('/')[-1], len(glob(i + '/*')))
+
+    print('No. of images after test split classwise \n')
+    for i in glob(pwd_root_pth+'/test/*'):
+        print(i.split('/')[-1], len(glob(i + '/*')))
