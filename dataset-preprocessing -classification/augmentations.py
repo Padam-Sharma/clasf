@@ -6,7 +6,7 @@ from tqdm.notebook import tqdm
 import os
 from utils import Resize_Transformation, Rotate_Transformation, Color_Transformation, Contrast_Transformation, \
     Horizontal_Flipping_Transformation, Vertical_Flipping_Transformation
-from utils import get_len, get_len_aug
+from utils import get_len, get_len_aug, make_dir
 from PIL import Image
 
 
@@ -15,6 +15,11 @@ def augmentations_main(config, logger):
     aug_pth = config['PATH']['pwd']['aug_img_path']
 
     total_data = glob(pwd_root_pth+'/train/*/*')
+
+    make_dir(aug_pth)
+    make_dir(aug_pth + '/com')
+    make_dir(aug_pth + '/hoa')
+    make_dir(aug_pth + 'res')
 
     for i in total_data:
         src = i
