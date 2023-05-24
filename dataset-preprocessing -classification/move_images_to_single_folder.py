@@ -12,8 +12,10 @@ def move_to_single_folder_main(config, logger):
     img_pth = config["PATH"]["drive"]["image_path"]
     csv_pth = config["PATH"]["drive"]["image_path"]
     pwd_root_pth = config["PATH"]["pwd"]["root_path"]
-    os.system(f"cp {csv_pth} {pwd_root_pth}")
-    os.system(f"cp -r {img_pth} {pwd_root_pth}")
+    move_csv_cmd = f"cp {csv_pth} {pwd_root_pth}"
+    move_img_cmd = f"cp -r {img_pth} {pwd_root_pth}"
+    os.system(move_csv_cmd)
+    os.system(move_img_cmd)
     df = pd.read_csv('/content/corrected data.csv')
 
     print(len(set(list(df['oid']))), len(list(df['oid'])))
