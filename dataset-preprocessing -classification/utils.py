@@ -5,6 +5,7 @@ import random
 import numpy as np
 from tqdm.notebook import tqdm
 import os
+from PIL import Image
 import torch
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
@@ -52,6 +53,54 @@ Rotate_Transformation = transforms.Compose([
     transforms.RandomRotation(degrees=66)
 ])
 
+
+def prob():
+    return random.choice([0, 1, 2])
+
+def augment(img_pth):
+    image = Image.open(img_pth)
+    # display(img)
+    image = np.array(image)
+    # save_pth = img_pth.replace('clswise', 'clswise_aug')
+    save_pth = img_pth
+    save_pth = save_pth[:-4] + '_' + '.png'
+    x = 0
+    if prob():
+        aug_img = Resize_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
+    if prob():
+        aug_img = Horizontal_Flipping_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
+    if prob():
+        aug_img = Vertical_Flipping_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
+    if prob():
+        aug_img = Color_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
+    if prob():
+        aug_img = Rotate_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
+    if prob():
+        aug_img = Contrast_Transformation(image)
+        save_pth = save_pth.split('.')[0] + str(x) + '.png'
+        x += 1
+        aug_img.save(save_pth)
+        # display(aug_img)
 
 def get_len_aug(type):
     print(len(glob('/content/train_aug/' + type + '/*')))

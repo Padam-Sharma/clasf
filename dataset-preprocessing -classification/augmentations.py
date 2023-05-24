@@ -6,7 +6,7 @@ from tqdm.notebook import tqdm
 import os
 from utils import Resize_Transformation, Rotate_Transformation, Color_Transformation, Contrast_Transformation, \
     Horizontal_Flipping_Transformation, Vertical_Flipping_Transformation
-from utils import get_len, get_len_aug, make_dir
+from utils import get_len, get_len_aug, make_dir, augment
 from PIL import Image
 
 
@@ -27,54 +27,6 @@ def augmentations_main(config, logger):
         img = i.split('/')[-1]
         dst = aug_pth + cls + '/' + img
         shutil.copy(src, dst)
-
-    def prob():
-        return random.choice([0, 1, 2])
-
-    def augment(img_pth):
-        image = Image.open(img_pth)
-        # display(img)
-        image = np.array(image)
-        # save_pth = img_pth.replace('clswise', 'clswise_aug')
-        save_pth = img_pth
-        save_pth = save_pth[:-4] + '_' + '.png'
-        x = 0
-        if prob():
-            aug_img = Resize_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
-        if prob():
-            aug_img = Horizontal_Flipping_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
-        if prob():
-            aug_img = Vertical_Flipping_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
-        if prob():
-            aug_img = Color_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
-        if prob():
-            aug_img = Rotate_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
-        if prob():
-            aug_img = Contrast_Transformation(image)
-            save_pth = save_pth.split('.')[0] + str(x) + '.png'
-            x += 1
-            aug_img.save(save_pth)
-            # display(aug_img)
 
     cls_ = ['com', 'hoa', 'res']
 
