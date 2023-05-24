@@ -1,0 +1,12 @@
+PATH:
+  drive:
+    image_path: '/content/drive/MyDrive/property classf data'
+    csv_1_path: '/content/drive/MyDrive/corrected data.csv'
+    csv_2_path: ''
+  pwd:
+    root_path: '/content'
+    org_img_path: ''
+    org_img_de-class_path: ''
+    new_img_path: ''
+    combined_img_path: ''
+    aug_img_path: ''
