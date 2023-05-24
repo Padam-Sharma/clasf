@@ -14,4 +14,11 @@ def make_dir(path):
 def rmdir(path):
     shutil.rmtree(path)
 
+def movettv(path, type):
+    for i in tqdm(path):
+        cls = i.split('/')[-2]
+        img = i.split('/')[-1]
+        src = i
+        dst = '/content/' + type + '/' + cls + '/' + img
+        shutil.copy(src, dst)
 

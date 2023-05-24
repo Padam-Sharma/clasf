@@ -3,7 +3,7 @@ PATH:
     image_path: '/content/drive/MyDrive/property_classf_data'
     csv_1_path: '/content/drive/MyDrive/corrected_data.csv'
     csv_2_path: '/content/drive/MyDrive/Classification_activity_2.csv'
-    new_img_pth: '/content/drive/MyDrive/property_classf_data/additional data for feb month/png_clipped'
+    new_img_pth: '/content/drive/MyDrive/property_classf_data/additional_data_for_feb_month/png_clipped'
   pwd:
     root_path: '/content'
     org_img_path: ''
