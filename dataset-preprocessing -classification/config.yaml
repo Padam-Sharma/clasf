@@ -6,7 +6,7 @@ PATH:
   pwd:
     root_path: '/content'
     org_img_path: ''
-    org_img_de-class_path: ''
+    org_img_combined_path: '/content/all_images/'
     new_img_path: ''
-    combined_img_path: ''
+    combined_img_path: '/content/images/'
     aug_img_path: ''
