@@ -30,9 +30,6 @@ def correcting_labels_main(config, logger):
             duplicates.append(oid)
             src = new_img_pth + '/' + oid + '.png'
             dst = combined_img_path + cls_map[cls] + '/' + oid + '.png'
-            print(src)
-            print(dst)
-            print()
             shutil.copy(src, dst)
         else:
             pass

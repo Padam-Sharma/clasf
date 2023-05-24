@@ -51,7 +51,7 @@ def main():
     # time.sleep(1)
 
     logger.info('---------- Splitting into train, val and test ----------')
-    correcting_labels_main(config, logger)
+    train_val_test_split_main(config, logger)
     time.sleep(1)
 
     t2 = time.time()
