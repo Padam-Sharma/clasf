@@ -56,6 +56,6 @@ def augmentations_main(config, logger):
         os.remove(i)
 
     cls_ = ['com', 'hoa', 'res']
-
+    print('Final train augmentation split')
     for i in cls_:
         get_len_aug(i)
