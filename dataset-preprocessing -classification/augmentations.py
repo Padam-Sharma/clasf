@@ -8,6 +8,8 @@ from utils import Resize_Transformation, Rotate_Transformation, Color_Transforma
     Horizontal_Flipping_Transformation, Vertical_Flipping_Transformation
 from utils import get_len, get_len_aug, make_dir, augment
 from PIL import Image
+import logging
+logging.getLogger('PIL').setLevel(logging.WARNING)
 
 
 def augmentations_main(config, logger):
