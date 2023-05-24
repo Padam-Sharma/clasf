@@ -22,7 +22,7 @@ def move_to_single_folder_main(config, logger):
 
     df = pd.read_csv(csv_pth)
 
-    print('No. of unique rows :', len(set(list(df['oid']))), 'No. of total rows :', len(list(df['oid'])))
+    print('No. of unique rows :', len(set(list(df['oid']))), 'No. of total rows :', len(list(df['oid'])),'\n')
 
     make_dir('all_images')
     make_dir('images')
@@ -42,9 +42,9 @@ def move_to_single_folder_main(config, logger):
         src = i
         dst = org_img_combined_path + i.split('/')[-1]
         shutil.copy(src, dst)
-    print('Moved...')
+    print('Moved...\n')
 
-    print('No. of images after moving :',len(glob(org_img_combined_path+'/*')))
+    print('No. of images after moving :',len(glob(org_img_combined_path+'/*')),'\n')
 
     print('Starting to split images by class...')
     duplicates = []
@@ -60,6 +60,5 @@ def move_to_single_folder_main(config, logger):
             shutil.copy(src, dst)
         else:
             pass
-    print('Split complete...')
-
+    print('Split complete... \n')
     print('No. of images after split', len(glob(combined_img_path+'/*/*')))

@@ -40,14 +40,14 @@ def main():
 
     config = yaml.safe_load(open(str(args.config)))
 
-    logger.info('---------- Starting to move all images to single folder ----------')
-    move_to_single_folder_main(config, logger)
-    time.sleep(1)
-    exit()
-
-    # logger.info('---------- Correcting labels ----------')
-    # clip_tifs_main(config, logger)
+    # logger.info('---------- Starting to move all images to single folder ----------')
+    # move_to_single_folder_main(config, logger)
     # time.sleep(1)
+    # exit()
+
+    logger.info('---------- Correcting labels ----------')
+    clip_tifs_main(config, logger)
+    time.sleep(1)
 
     t2 = time.time()
     logger.info(f'time_taken: {round(t2 - t1, 2)} seconds')

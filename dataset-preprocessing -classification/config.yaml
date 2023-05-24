@@ -2,11 +2,11 @@ PATH:
   drive:
     image_path: '/content/drive/MyDrive/property_classf_data'
     csv_1_path: '/content/drive/MyDrive/corrected_data.csv'
-    csv_2_path: ''
+    csv_2_path: '/content/drive/MyDrive/Classification_activity_2.csv'
   pwd:
     root_path: '/content'
     org_img_path: ''
     org_img_combined_path: '/content/all_images/'
-    new_img_path: ''
+    new_img_path: '/content/png_clipped/'
     combined_img_path: '/content/images/'
     aug_img_path: ''
