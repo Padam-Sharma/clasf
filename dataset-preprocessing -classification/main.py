@@ -10,6 +10,7 @@ import argparse
 from move_images_to_single_folder import move_to_single_folder_main
 from correcting_labels import correcting_labels_main
 from train_val_test_split import train_val_test_split_main
+from augmentations import augmentations_main
 
 warnings.filterwarnings("ignore")
 
@@ -50,8 +51,12 @@ def main():
     # correcting_labels_main(config, logger)
     # time.sleep(1)
 
-    logger.info('---------- Splitting into train, val and test ----------')
-    train_val_test_split_main(config, logger)
+    # logger.info('---------- Splitting into train, val and test ----------')
+    # train_val_test_split_main(config, logger)
+    # time.sleep(1)
+
+    logger.info('---------- Augmenting train dataset ----------')
+    augmentations_main(config, logger)
     time.sleep(1)
 
     t2 = time.time()

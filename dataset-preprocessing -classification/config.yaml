@@ -10,4 +10,4 @@ PATH:
     org_img_combined_path: '/content/all_images/'
     new_img_path: '/content/png_clipped/'
     combined_img_path: '/content/images/'
-    aug_img_path: ''
+    aug_img_path: '/content/train_aug/'

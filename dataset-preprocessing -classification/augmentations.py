@@ -10,14 +10,17 @@ from utils import get_len, get_len_aug
 from PIL import Image
 
 
-def augmentations_main():
-    total_data = glob('/content/train/*/*')
+def augmentations_main(config, logger):
+    pwd_root_pth = config['PATH']['pwd']['root_path']
+    aug_pth = config['PATH']['pwd']['aug_img_path']
+
+    total_data = glob(pwd_root_pth+'/train/*/*')
 
     for i in total_data:
         src = i
         cls = i.split('/')[-2]
         img = i.split('/')[-1]
-        dst = '/content/train_aug/' + cls + '/' + img
+        dst = aug_pth + cls + '/' + img
         shutil.copy(src, dst)
 
     def prob():
@@ -73,10 +76,10 @@ def augmentations_main():
     for i in cls_:
         get_len_aug(i)
 
-    for i in tqdm(glob('/content/train_aug/res/*')):
+    for i in tqdm(glob(aug_pth + '/res/*')):
         augment(i)
 
-    for i in tqdm(glob('/content/train_aug/hoa/*')):
+    for i in tqdm(glob(aug_pth + '/hoa/*')):
         augment(i)
 
     cls_ = ['com', 'hoa', 'res']
@@ -84,10 +87,10 @@ def augmentations_main():
     for i in cls_:
         get_len_aug(i)
 
-    dl_hoa = glob('/content/train_aug/hoa/*')
+    dl_hoa = glob(aug_pth + '/hoa/*')
     random.shuffle(dl_hoa)
 
-    dl_res = glob('/content/train_aug/res/*')
+    dl_res = glob(aug_pth + '/res/*')
     random.shuffle(dl_res)
 
     for i in dl_hoa[0:1400]:
