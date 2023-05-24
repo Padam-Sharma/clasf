@@ -8,6 +8,7 @@ import logging.config
 import time
 import argparse
 from move_images_to_single_folder import move_to_single_folder_main
+from correcting_labels import correcting_labels_main
 
 warnings.filterwarnings("ignore")
 
@@ -46,7 +47,7 @@ def main():
     # exit()
 
     logger.info('---------- Correcting labels ----------')
-    clip_tifs_main(config, logger)
+    correcting_labels_main(config, logger)
     time.sleep(1)
 
     t2 = time.time()
