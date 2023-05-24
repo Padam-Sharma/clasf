@@ -34,10 +34,10 @@ def augmentations_main(config, logger):
 
     for i in cls_:
         get_len_aug(i)
-
+    print('Augmenting Residential property...')
     for i in tqdm(glob(aug_pth + '/res/*')):
         augment(i)
-
+    print('Augmenting HOA property...')
     for i in tqdm(glob(aug_pth + '/hoa/*')):
         augment(i)
 
