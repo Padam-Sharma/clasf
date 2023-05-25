@@ -19,8 +19,8 @@ def model_train_main(config, logger):
 
     os.system(train_cmd)
 
-    test_py_pth = config['test']['val_py_pth']
-    test_dir = config['test']['val_dir']
+    test_py_pth = config['test']['test_py_pth']
+    test_dir = config['test']['test_dir']
     model_type = config['test']['model_type']
     saved_model_path = config['test']['saved_model_path']
     batch_size = config['test']['batch_size']
