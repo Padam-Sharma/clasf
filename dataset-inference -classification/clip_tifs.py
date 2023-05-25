@@ -7,6 +7,7 @@ warnings.filterwarnings("ignore")
 import logging
 logger = logging.getLogger('')
 from tqdm import tqdm
+import rasterio.mask
 import rasterio as rio
 import geopandas as gpd
 
