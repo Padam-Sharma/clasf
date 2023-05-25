@@ -13,6 +13,7 @@ PATH:
     aug_img_path: '/content/train_aug/'
 
 train:
+  train_py_path: '/content/pytorch-image-models/train.py'
   train_dir: '/content/train_aug'
   model_type: 'tf_efficientnet_b0'
   batch_size: 8

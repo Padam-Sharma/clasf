@@ -6,6 +6,7 @@ def model_train_main(config, logger):
     os.system('pip install -q -e .')
     os.system('pip install -q focal_loss_torch')
 
+    test_py_pth = config['train']['train_py_pth']
     train_dir = config['train']['train_dir']
     model_type = config['train']['model_type']
     batch_size = config['train']['batch_size']
@@ -14,7 +15,7 @@ def model_train_main(config, logger):
     epochs = config['train']['epochs']
     num_classes = config['train']['num_classes']
 
-    train_cmd = f'python train.py --data-dir {train_dir} --model {model_type} --pretrained --batch-size {batch_size} --img-size {img_size} --val-split {val_split} --epochs {epochs} --num-classes {num_classes}'
+    train_cmd = f'python {test_py_pth} --data-dir {train_dir} --model {model_type} --pretrained --batch-size {batch_size} --img-size {img_size} --val-split {val_split} --epochs {epochs} --num-classes {num_classes}'
 
     os.system(train_cmd)
 
