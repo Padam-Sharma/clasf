@@ -18,7 +18,7 @@ train:
   batch_size: 8
   img_size: 512
   val_split: 0.2
-  epochs: 30
+  epochs: 1
   num_classes: 3
 
 test:

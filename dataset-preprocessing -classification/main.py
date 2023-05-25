@@ -59,6 +59,10 @@ def main():
     augmentations_main(config, logger)
     time.sleep(1)
 
+    logger.info('---------- Training and testing the model ----------')
+    augmentations_main(config, logger)
+    time.sleep(1)
+
     t2 = time.time()
     logger.info(f'time_taken: {round(t2 - t1, 2)} seconds')
 
