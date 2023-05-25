@@ -20,8 +20,8 @@ def convex_hull(input_path, out_path):
 
 
 def convex_hull_process_folder(config):
-    logger.info(f'Taking convex hull of parcels')
-    input_parcel_dir = f'{config["PATH"]["input"]}/annotations'
+    logger.info(f'Taking convex hull')
+    input_parcel_dir = f'{config["PATH"]["input"]}/parcels'
     output_parcel_dir = f'{config["PATH"]["input"]}/annotations-conv_hull'
 
     shutil.rmtree(output_parcel_dir, ignore_errors=True)
@@ -30,10 +30,10 @@ def convex_hull_process_folder(config):
 
     task_list = []
     for parcel in os.listdir(input_parcel_dir):
-        if parcel.endswith('.shp'):
+        if parcel.endswith('.geojson'):
             file_name = parcel.split('.')[0]
-            in_parcel_path = os.path.join(input_parcel_dir, file_name + '.shp')
-            out_parcel_path = os.path.join(output_parcel_dir, file_name + '.shp')
+            in_parcel_path = os.path.join(input_parcel_dir, file_name + '.geojson')
+            out_parcel_path = os.path.join(output_parcel_dir, file_name + '.geojson')
             if os.path.exists(in_parcel_path):
                 task_list.append([in_parcel_path, out_parcel_path])
             else:
@@ -51,7 +51,7 @@ def convex_hull_main(config, tmp_logger):
 
     threads = []
 
-    thread = threading.Thread(target=convex_hull_process_folder, args=(config))
+    thread = threading.Thread(target=convex_hull_process_folder, args=(config,))
     threads.append(thread)
     thread.start()
 
