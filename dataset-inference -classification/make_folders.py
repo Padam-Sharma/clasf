@@ -12,9 +12,9 @@ def make_folders_main(config, logger):
     inference_pth = config['inference']['drive']['tif_ann_pth']
     pwd_root_pth = config['inference']['pwd_root_pth']
 
-    input_dir = config['PATH']['inference_step']['INPUT']
-    intermediate_dir = config['PATH']['inference_step']['INTERMEDIATE']
-    output_dir = config['PATH']['inference_step']['OUTPUT']
+    input_dir = config['PATH']['INPUT']
+    intermediate_dir = config['PATH']['INTERMEDIATE']
+    output_dir = config['PATH']['OUTPUT']
 
     make_dir(input_dir)
     make_dir(intermediate_dir)
