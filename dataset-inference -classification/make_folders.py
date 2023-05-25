@@ -9,7 +9,7 @@ import os
 
 
 def make_folders_main(config, logger):
-    inference_pth = config['inference']['drive']['tiff_ann_pth']
+    inference_pth = config['inference']['drive']['tif_ann_pth']
     pwd_root_pth = config['inference']['pwd_root_path']
 
     input_dir = config['PATH']['inference_step']['INPUT']
