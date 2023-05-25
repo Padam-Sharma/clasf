@@ -2,7 +2,7 @@ import os
 
 def model_train_main(config, logger):
     os.system('git clone https://github.com/Padam-Sharma/pytorch-image-models.git')
-    os.system('%cd pytorch-image-models')
+    os.system('%%cd pytorch-image-models')
     os.system('pip install -q -e .')
     os.system('pip install -q focal_loss_torch')
 
