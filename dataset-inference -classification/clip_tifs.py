@@ -35,7 +35,7 @@ def clip_tifs_process_folder(config):
         if tif .endswith('.tif'):
             file_name = tif.split('.')[0]
             in_tif_path = os.path.join(input_tifs_dir, tif)        
-            in_shp_path = os.path.join(input_parcel_dir, file_name+'.shp')
+            in_shp_path = os.path.join(input_parcel_dir, file_name+'.geojson')
             out_tif_path = os.path.join(clipped_tifs_dir, file_name+'.tif')
             if os.path.exists(in_shp_path):
                 task_list.append([in_shp_path, in_tif_path, out_tif_path])
