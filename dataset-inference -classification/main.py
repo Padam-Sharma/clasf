@@ -47,12 +47,10 @@ def main():
     logger.info('---------- Setting up data and folders ----------')
     make_folders_main(config, logger)
     time.sleep(1)
-    exit()
 
     logger.info('---------- Starting to take convex hull ----------')
     convex_hull_main(config, logger)
     time.sleep(1)
-    exit()
 
     logger.info('---------- Starting tifs clipping ----------')
     clip_tifs_main(config, logger)

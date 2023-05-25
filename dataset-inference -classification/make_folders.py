@@ -21,7 +21,7 @@ def make_folders_main(config, logger):
     make_dir(output_dir)
     make_dir(output_dir+'/png_clipped')
 
-    move_inference_folder_cmd = f"cp {inference_pth} {input_dir}"
+    move_inference_folder_cmd = f"cp -r {inference_pth} {input_dir}"
     print("Moving tiffs and annotations to input directory")
     os.system(move_inference_folder_cmd)
 

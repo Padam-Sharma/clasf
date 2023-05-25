@@ -1,7 +1,7 @@
 PATH:
-  input: '/content/inference_step/INPUT'
-  intermediate: '/content/inference_step/INTERMEDIATE'
-  output: '/content/inference_step/OUTPUT'
+  INPUT: '/content/inference_step/INPUT'
+  INTERMEDIATE: '/content/inference_step/INTERMEDIATE'
+  OUTPUT: '/content/inference_step/OUTPUT'
 
 
 GENERAL:
