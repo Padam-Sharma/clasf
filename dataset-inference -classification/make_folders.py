@@ -9,7 +9,8 @@ import os
 
 
 def make_folders_main(config, logger):
-    inference_pth = config['inference']['drive']['tif_ann_pth']
+    inference_tif_pth = config['inference']['drive']['tif_pth']
+    inference_ann_pth = config['inference']['drive']['ann_pth']
     pwd_root_pth = config['inference']['pwd_root_pth']
 
     input_dir = config['PATH']['input']
@@ -21,9 +22,11 @@ def make_folders_main(config, logger):
     make_dir(output_dir)
     make_dir(output_dir+'/png_clipped')
 
-    move_inference_folder_cmd = f"cp -r {inference_pth} {input_dir}"
+    move_tif_cmd = f"cp -r {inference_tif_pth} {input_dir}"
+    move_ann_cmd = f"cp -r {inference_ann_pth} {input_dir}"
     print("Moving tiffs and annotations to input directory")
-    os.system(move_inference_folder_cmd)
+    os.system(move_tif_cmd)
+    os.system(move_ann_cmd)
 
 
 

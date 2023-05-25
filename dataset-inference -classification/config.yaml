@@ -10,7 +10,8 @@ GENERAL:
 
 inference:
   drive:
-    tif_ann_pth: '/content/drive/MyDrive/property_classf_data/inference'
+    tif_pth: '/content/drive/MyDrive/property_classf_data/inference/tifs'
+    ann_pth: '/content/drive/MyDrive/property_classf_data/inference/annotations'
   pwd_root_pth: '/content'
   test_py_pth: '/content/pytorch-image-models/inference.py'
   test_dir: '/content/inference_step/OUTPUT/png_clipped'
