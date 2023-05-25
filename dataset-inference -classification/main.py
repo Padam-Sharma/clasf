@@ -4,6 +4,7 @@ from clip_tifs import clip_tifs_main
 from convex_hull import convex_hull_main
 from convert_to_png import convert_png_main
 from utils import validate_config, cleanup
+from make_folders import make_folders_main
 import yaml
 import os
 import sys
@@ -43,19 +44,19 @@ def main():
     
     config = yaml.safe_load(open(str(args.config)))
 
-    # logger.info('---------- Setting up data and folders ----------')
-    # make_folders_main(config, logger)
-    # time.sleep(1)
-    # exit()
+    logger.info('---------- Setting up data and folders ----------')
+    make_folders_main(config, logger)
+    time.sleep(1)
+    exit()
 
-    # logger.info('---------- Starting to take convex hull ----------')
-    # convex_hull_main(config, logger)
-    # time.sleep(1)
-    # exit()
+    logger.info('---------- Starting to take convex hull ----------')
+    convex_hull_main(config, logger)
+    time.sleep(1)
+    exit()
 
-    # logger.info('---------- Starting tifs clipping ----------')
-    # clip_tifs_main(config, logger)
-    # time.sleep(1)
+    logger.info('---------- Starting tifs clipping ----------')
+    clip_tifs_main(config, logger)
+    time.sleep(1)
 
     logger.info('---------- Starting convert to png----------')
     convert_png_main(config, logger)
