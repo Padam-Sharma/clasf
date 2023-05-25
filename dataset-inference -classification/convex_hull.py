@@ -21,7 +21,7 @@ def convex_hull(input_path, out_path):
 
 def convex_hull_process_folder(config):
     logger.info(f'Taking convex hull')
-    input_parcel_dir = f'{config["PATH"]["input"]}/parcels'
+    input_parcel_dir = f'{config["PATH"]["input"]}/parcel'
     output_parcel_dir = f'{config["PATH"]["input"]}/annotations-conv_hull'
 
     shutil.rmtree(output_parcel_dir, ignore_errors=True)
