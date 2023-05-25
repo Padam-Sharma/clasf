@@ -1,0 +1,24 @@
+PATH:
+  input: '/content/inference_step/INPUT'
+  intermediate: '/content/inference_step/INTERMEDIATE'
+  output: '/content/inference_step/OUTPUT'
+
+
+GENERAL:
+  classes: {'Commercial': 1, 'HoA': 2, 'Residential': 3}
+  num_processes: 4
+
+inference:
+  drive:
+    tif_ann_pth: '/content/drive/MyDrive/property_classf_data/inference'
+  pwd_root_pth: '/content'
+  test_py_pth: '/content/pytorch-image-models/inference.py'
+  test_dir: '/content/inference_step/OUTPUT/png_clipped'
+  model_type: 'tf_efficientnet_b0'
+  saved_model_path: '/content/model_best.pth.tar'
+  batch_size: 1
+  img_size: 512
+  num_classes: 3
+  log_freq: 1
+
+

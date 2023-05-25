@@ -32,3 +32,6 @@ test:
   num_classes: 3
   log_freq: 1
 
+inference:
+
+

@@ -8,31 +8,3 @@ GENERAL:
   classes: {'Commercial': 1, 'HoA': 2, 'Residential': 3}
   num_processes: 4
 
-
-BATCHING:
-  perform_batching: False
-  dim: 2048                                 # dimension (in pixels) of the image chips to  be generated
-  stride: 1024                              # stride (in pixels) to be kept
-  padding: 0                                # Padding (in pixels) present in the PIXELS images
-  num_processes: 4                          # No. of processes for multiprocessing
-
-
-PIXELS:
-  compute_pixel_ratio: True                 # Whether to calculate pixels ratio (distribution) or not
-  replace_values: True                      # If found unwanted value, whether to replace or not
-  class_order: [1, 2, 3]                      #class preference, array's last class pixel value will overwrite if it overlaps with any other class pixel value.
-
-
-REMOVE_IMAGES:
-  remove_images: True                       # Whether to prune training data for rgb images having black portion above a certain threshold
-  percent_threshold: 95                     # Percent thresold for removing images
-  num_processes: 4                         # No. of processes for multiprocessing
-
-
-MAKE_ODGT:
-  make_odgt: True                           # Whether to make .odgt file or not
-  val_split_percent: 40                      # Validation split
-  width: 2048                               # Width of the images
-  height: 2048                              # Height of the images
-
-
