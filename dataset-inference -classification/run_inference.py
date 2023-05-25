@@ -9,7 +9,7 @@ def run_inference_main(config, logger):
     test_py_pth = config['inference']['test_py_pth']
     test_dir = config['inference']['test_dir']
     model_type = config['inference']['model_type']
-    saved_model_path = config['inference']['saved_model_path']
+    saved_model_path = config['inference']['saved_model_pth']
     batch_size = config['inference']['batch_size']
     img_size = config['inference']['img_size']
     num_classes = config['inference']['num_classes']
