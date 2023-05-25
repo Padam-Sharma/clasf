@@ -1,6 +1,6 @@
 import os
 
-def model_train_main(config, logger):
+def run_inference_main(config, logger):
     os.system('git clone https://github.com/Padam-Sharma/pytorch-image-models.git')
     os.system('cd "/content/pytorch-image-models"')
     os.system('pip install -q -e "/content/pytorch-image-models"')
@@ -18,4 +18,3 @@ def model_train_main(config, logger):
     test_cmd = f'python {test_py_pth} --data-dir {test_dir} --model {model_type} --checkpoint {saved_model_path} --img-size {img_size} --batch-size {batch_size} --num-classes {num_classes} --log-freq {log_freq}'
 
     os.system(test_cmd)
-    

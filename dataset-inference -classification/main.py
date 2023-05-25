@@ -5,6 +5,7 @@ from convex_hull import convex_hull_main
 from convert_to_png import convert_png_main
 from utils import validate_config, cleanup
 from make_folders import make_folders_main
+from run_inference import run_inference_main
 import yaml
 import os
 import sys
@@ -58,6 +59,10 @@ def main():
 
     logger.info('---------- Starting convert to png----------')
     convert_png_main(config, logger)
+    time.sleep(1)
+
+    logger.info('---------- Starting inference in clipped png----------')
+    run_inference_main(config, logger)
     time.sleep(1)
 
 
