@@ -7,16 +7,32 @@ warnings.filterwarnings("ignore")
 import logging
 logger = logging.getLogger('')
 from tqdm import tqdm
+import rasterio as rio
+import geopandas as gpd
 
 def clip_tif(in_shp_path, in_tif_path, out_tif_path): 
     """
     Clips tifs to the extent of the parcel. It helps in reducing the size of the tif.
     """
-    try:
-        os.system('gdalwarp -q -of GTiff -cutline {} -crop_to_cutline {} {}'.format(in_shp_path, in_tif_path, out_tif_path))
-    except Exception as e:
-        logger.warning(e)
-        logger.warning('some issue in ', in_tif_path)
+    with rio.open(in_tif_path) as src:
+        parcels = gpd.read_file(in_shp_path)
+        out_image, out_transform = rio.mask.mask(src, list(parcels['geometry']), crop=True)
+        out_meta = src.meta
+
+    out_meta.update(
+        {
+            "driver": "GTiff", "height": out_image.shape[1],
+            "width": out_image.shape[2], "transform": out_transform
+        }
+    )
+
+    with rio.open(out_tif_path, "w", **out_meta) as dest:
+        dest.write(out_image)
+    # try:
+    #     os.system('gdalwarp -q -of GTiff -cutline {} -crop_to_cutline {} {}'.format(in_shp_path, in_tif_path, out_tif_path))
+    # except Exception as e:
+    #     logger.warning(e)
+    #     logger.warning('some issue in ', in_tif_path)
 
 
 def clip_tifs_process_folder(config):
