@@ -20,6 +20,6 @@ inference:
   batch_size: 1
   img_size: 512
   num_classes: 3
-  log_freq: 1
+  log_freq: 5
 
 
