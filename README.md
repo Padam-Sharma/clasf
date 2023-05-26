@@ -1,5 +1,12 @@
 # ML_property_type_classification
 
+Commands to run both training and preprocessing (tested in COLAB)
+
+```bash
+pip install -q geopandas rasterio
+python '/content/clasf/dataset-preprocessing-classification/main.py' --config '/content/clasf/dataset-inference-classification/config.yaml'
+python '/content/clasf/dataset-inference-classification/main.py' --config '/content/clasf/dataset-inference-classification/config.yaml'
+```
 
 ## 1. Data Preprocessing for Training
 
