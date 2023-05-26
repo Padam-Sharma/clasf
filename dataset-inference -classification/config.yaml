@@ -13,7 +13,7 @@ inference:
     tif_pth: '/content/drive/MyDrive/property_classf_data/inference/tifs'
     ann_pth: '/content/drive/MyDrive/property_classf_data/inference/parcel'
   pwd_root_pth: '/content'
-  test_py_pth: '/content/pytorch-image-models/inference.py'
+  test_py_pth: '/content/clasf/dataset-inference -classification/val.py'
   test_dir: '/content/inference_step/OUTPUT/png_clipped'
   model_type: 'tf_efficientnet_b0'
   saved_model_pth: '/content/model_best.pth.tar'
